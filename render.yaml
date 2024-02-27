@@ -26,7 +26,6 @@ services:
         fromDatabase:
           name: test
           property: connectionString
-  -type: databases
 databases:
   - name: test
     databaseName: test # optional (Render may add a suffix)
