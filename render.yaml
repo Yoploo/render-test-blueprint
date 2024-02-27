@@ -2,10 +2,10 @@ services:
   - type: web
     name: esgi-test
     runtime: node
-    repo: https://github.com/Yoploo/render-test-blueprint # optional
-    region: frankfurt # optional (defaults to oregon)
-    plan: free # optional (defaults to starter instance type)
-    branch: main # optional (defaults to master)
+    repo: https://github.com/Yoploo/render-test-blueprint
+    region: frankfurt
+    plan: free
+    branch: main
     buildCommande: npm install
     startCommande: npm run start
     envVars:
@@ -17,4 +17,5 @@ services:
 databases:
   - name: test
     region: frankfurt
+    plan: free
   
