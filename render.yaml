@@ -6,8 +6,8 @@ services:
     region: frankfurt
     plan: free
     branch: main
-    buildCommande: npm install
-    startCommande: npm run start
+    buildCommande: bundle install
+    startCommande: bundle exec ruby main.rb
     envVars:
       - key: DB_CONNECTION_STRING
         fromDatabase:
