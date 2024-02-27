@@ -7,7 +7,7 @@ services:
     plan: free
     branch: main
     buildCommande: npm install
-    startCommande: npm start
+    startCommande: npm run start
     envVars:
       - key: DB_CONNECTION_STRING
         fromDatabase:
