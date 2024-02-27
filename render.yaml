@@ -1,37 +1,20 @@
 services:
-  # A Docker web service
   - type: web
-    name: webdis
-    runtime: docker
+    name: esgi-test
+    runtime: node
     repo: https://github.com/Yoploo/render-test-blueprint # optional
-    region: oregon # optional (defaults to oregon)
+    region: frankfurt # optional (defaults to oregon)
     plan: free # optional (defaults to starter instance type)
     branch: main # optional (defaults to master)
-    rootDir: ./
-    healthCheckPath: /
+    buildCommande: npm install
+    startCommande: npm run start
     envVars:
-      - key: DB_NAME
+      - key: DB_CONNECTION_STRING
         fromDatabase:
           name: test
           property: connectionString
-      - key: DB_USER
-        fromDatabase:
-          name: test
-          property: connectionString
-      -  key: HOST_NAME
-        fromDatabase:
-          name: test
-          property: connectionString
-      -  key: DB_PASSWORD
-        fromDatabase:
-          name: test
-          property: connectionString
+
 databases:
   - name: test
-    databaseName: test # optional (Render may add a suffix)
-  - key: DB_PASSWORD
-    generateValue: true
-  - key: HOST_NAME
-    generateValue: true
-  - key: DB_USER
-    generateValue: true
+    region: frankfurt
+  
