@@ -6,8 +6,8 @@ services:
     region: frankfurt
     plan: free
     branch: main
-    buildCommande: npm install
-    startCommande: npm run start
+    buildCommand: npm install
+    startCommand: npm run start
     envVars:
       - key: DB_CONNECTION_STRING
         fromDatabase:
